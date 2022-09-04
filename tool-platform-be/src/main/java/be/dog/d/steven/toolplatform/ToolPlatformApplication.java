@@ -9,5 +9,4 @@ public class ToolPlatformApplication {
     public static void main(String[] args) {
         SpringApplication.run(ToolPlatformApplication.class, args);
     }
-
 }
