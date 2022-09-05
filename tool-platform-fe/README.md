@@ -1,27 +1,34 @@
 # ToolPlatform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+## Commands Used to Build Project
 
-## Development server
+### Scaffolding
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ng n tool-platform --routing --style scss
+ng g m core
+ng g m shared
+ng g c home
+ng g c core/nav-bar
 
-## Code scaffolding
+### Material
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng add @angular/material
 
-## Build
+### Storybook
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+npx storybook init
+yarn add -D @storybook/addon-a11y @storybook/test-runner
 
-## Running unit tests
+### Jest
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng add @briebug/jest
+yarn add -D jest jest-preset-angular @types/jest @angular-builders/jest
 
-## Running end-to-end tests
+### Remove Karma
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+yarn remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
 
-## Further help
+### ES Lint & Prettier
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ng add @angular-eslint/schematics
+yarn add -D eslint-plugin-unused-imports prettier eslint-plugin-prettier eslint-config-prettier

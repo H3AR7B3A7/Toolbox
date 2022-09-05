@@ -1,0 +1,14 @@
+@use 'node_modules/@angular/material/index' as mat;
+@import "light-palette";
+
+$tool-platform-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-light-palette,
+      accent: $accent-light-palette,
+      warn: $warn-light-palette,
+    ),
+  )
+);
+
+@include mat.all-component-themes($tool-platform-theme);
