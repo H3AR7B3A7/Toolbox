@@ -4,14 +4,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Install
         working-directory: ./tool-platform-fe
         run: yarn
       - name: Build Storybook
         working-directory: ./tool-platform-fe
         run: yarn run build-storybook
-      - uses: chromaui/action@v1
+      - uses: chromaui/action@v2
         with:
           storybookBuildDir: storybook-static
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
