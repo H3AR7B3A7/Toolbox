@@ -1,3 +1,26 @@
+server:
+  servlet:
+    context-path: /api
+
+---
+
+management:
+  endpoints:
+    enabled-by-default: false
+    jmx:
+      exposure:
+        exclude: '*'
+    web:
+      base-path: /metrics
+      exposure:
+        include: health, users
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+
+---
+
 spring:
   h2:
     console:

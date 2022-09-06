@@ -1,3 +1,5 @@
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:4200/api/',
+  telemetryUrl: 'http://localhost:4200/api/metrics/'
 };
