@@ -10,7 +10,7 @@ jobs:
         run: yarn
       - name: Build Storybook
         working-directory: ./tool-platform-fe
-        run: yarn run build:storybook
+        run: yarn run build-storybook
       - uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
