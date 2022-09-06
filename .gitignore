@@ -159,3 +159,7 @@ hs_err_pid*
 ## System files
 **/.DS_Store
 **/Thumbs.db
+
+## Storybook
+**/.storybook/
+**/storybook-static/

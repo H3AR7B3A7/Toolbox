@@ -1,27 +1,63 @@
 # ToolPlatform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+## Commands to Run & Manage App
 
-## Development server
+```
+yarn start - Start the application
+yarn build - Output a production ready application in the dist folder
+yarn test - Start Jest tests
+yarn storybook - Run storybook on port 6006
+yarn build-storybook - Output a static Storybook in the storybook-static directory
+yarn test-storybook - Run storybook tests
+yarn lint - Run linting using ES-Lint
+yarn format - Format files using Prettier
+yarn e2e - Run end-to-end tests using Cypress
+yarn cypress:open - Open Cypress
+yarn cypress:run - Run Cypress
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Commands Used to Build Project
 
-## Code scaffolding
+### Scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+ng n tool-platform --routing --style scss
+ng g m core
+ng g m shared
+ng g c home
+ng g c core/nav-bar
+```
 
-## Build
+### Material
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+> ng add @angular/material
 
-## Running unit tests
+### Jest
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> ng add @briebug/jest
 
-## Running end-to-end tests
+> yarn add -D jest jest-preset-angular @types/jest @angular-builders/jest
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Remove Karma
 
-## Further help
+> yarn remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Cypress
+
+> ng add @cypress/schematic
+
+### ES Lint & Prettier
+
+> ng add @angular-eslint/schematics
+
+> yarn add -D eslint-plugin-unused-imports prettier eslint-plugin-prettier eslint-config-prettier
+
+### Storybook
+
+> npx storybook init
+
+> yarn add -D @storybook/addon-a11y @storybook/test-runner
+
+### Chromatic
+
+> yarn add -D chromatic
