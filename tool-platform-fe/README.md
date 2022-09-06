@@ -32,12 +32,6 @@ ng g c core/nav-bar
 
 > ng add @angular/material
 
-### Storybook
-
-> npx storybook init
-
-> yarn add -D @storybook/addon-a11y @storybook/test-runner
-
 ### Jest
 
 > ng add @briebug/jest
@@ -48,12 +42,22 @@ ng g c core/nav-bar
 
 > yarn remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
 
+### Cypress
+
+> ng add @cypress/schematic
+
 ### ES Lint & Prettier
 
 > ng add @angular-eslint/schematics
 
 > yarn add -D eslint-plugin-unused-imports prettier eslint-plugin-prettier eslint-config-prettier
 
-### Cypress
+### Storybook
 
-> ng add @cypress/schematic
+> npx storybook init
+
+> yarn add -D @storybook/addon-a11y @storybook/test-runner
+
+### Chromatic
+
+> yarn add -D chromatic
