@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install
-        run: yarn install --frozen-lockfile
-        working-directory: tool-platform-fe
+        working-directory: ./tool-platform-fe
+        run: yarn
       - name: Build Storybook
+        working-directory: ./tool-platform-fe
         run: yarn run build:storybook
-        working-directory: tool-platform-fe
       - uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
