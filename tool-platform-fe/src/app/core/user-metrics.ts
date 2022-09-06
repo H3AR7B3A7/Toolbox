@@ -1,3 +1,3 @@
 export interface UserMetrics {
-  users: number
+  users: number;
 }

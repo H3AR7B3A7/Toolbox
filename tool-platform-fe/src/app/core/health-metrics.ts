@@ -1,3 +1,3 @@
 export interface HealthMetrics {
-  status: 'UP' | 'DOWN'
+  status: 'UP' | 'DOWN';
 }
