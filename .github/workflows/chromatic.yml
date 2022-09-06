@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install
-        working-directory: ./tool-platform-fe
+        working-directory: ../tool-platform-fe
         run: yarn
       - name: Build Storybook
-        working-directory: ./tool-platform-fe
+        working-directory: ../tool-platform-fe
         run: yarn run build:storybook
       - uses: chromaui/action@v1
         with:
