@@ -3,16 +3,13 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults: 
+      run: 
+        working-directory: tool-platform-fe
     steps:
-      - uses: actions/checkout@v2
-      - name: Install
-        working-directory: ./tool-platform-fe
-        run: yarn
-      - name: Build Storybook
-        working-directory: ./tool-platform-fe
-        run: yarn run build-storybook
-      - uses: chromaui/action@v2
+      - uses: actions/checkout@v1
+      - run: yarn
+      - uses: chromaui/action@v1
         with:
-          storybookBuildDir: storybook-static
+          workingDir: tool-platform-fe
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
