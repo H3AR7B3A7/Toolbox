@@ -61,3 +61,7 @@ ng g c core/nav-bar
 ### Chromatic
 
 > yarn add -D chromatic
+
+### Yarn Audit
+
+> yarn add yarn-audit-fix
