@@ -50,7 +50,7 @@ ng g c core/nav-bar
 
 > ng add @angular-eslint/schematics
 
-> yarn add -D eslint-plugin-unused-imports prettier eslint-plugin-prettier eslint-config-prettier
+> yarn add -D eslint-plugin-unused-imports prettier prettier-eslint eslint-plugin-prettier eslint-config-prettier
 
 ### Storybook
 
