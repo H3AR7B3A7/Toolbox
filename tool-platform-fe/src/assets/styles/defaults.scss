@@ -1,3 +1,6 @@
+@import "src/assets/styles/theme";
+@import "src/assets/styles/colors";
+
 * {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
@@ -7,4 +10,5 @@ html,
 body {
   margin: 0;
   height: 100%;
+  background-color: $white;
 }

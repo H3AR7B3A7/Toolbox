@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { CommonModule } from '@angular/common';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppRoutingModule } from './app-routing.module';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [NavBarComponent],
@@ -11,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   exports: [AppRoutingModule, NavBarComponent, BrowserAnimationsModule]
 })

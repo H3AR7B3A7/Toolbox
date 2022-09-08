@@ -19,7 +19,10 @@
     "module": "es2020",
     "lib": ["es2020", "dom"],
     "types": ["jest"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@app/*" : ["src/app/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

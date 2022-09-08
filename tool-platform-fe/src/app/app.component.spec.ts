@@ -1,7 +1,10 @@
-import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
+
+import { CoreModule } from '@app/core/core.module';
+import { AppComponent } from './app.component';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {

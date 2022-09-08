@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TelemetryService } from '../core/telemetry.service';
 import { Observable, pluck } from 'rxjs';
+
+import { TelemetryService } from '../core/telemetry.service';
 
 @Component({
   selector: 'app-home',

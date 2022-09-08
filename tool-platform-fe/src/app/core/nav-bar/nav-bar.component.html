@@ -1,1 +1,5 @@
-<p>nav-bar works!</p>
+<div>
+  <img src="favicon.svg" alt="logo" routerLink="/">
+  <button *ngIf="!loggedIn" mat-stroked-button color="accent">Log in</button>
+  <button *ngIf="loggedIn" mat-stroked-button color="accent">Log out</button>
+</div>
