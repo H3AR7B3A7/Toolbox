@@ -36,11 +36,11 @@ ng g c core/nav-bar
 
 > ng add @briebug/jest
 
-> yarn add -D jest jest-preset-angular @types/jest @angular-builders/jest
+> yarn add -D jest jest-preset-angular @types/jest @angular-builders/jest @types/jest
 
 ### Remove Karma
 
-> yarn remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
+> yarn remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter @types/jasmine
 
 ### Cypress
 
