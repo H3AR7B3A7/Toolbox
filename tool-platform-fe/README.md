@@ -14,6 +14,7 @@ yarn format - Format files using Prettier
 yarn e2e - Run end-to-end tests using Cypress
 yarn cypress:open - Open Cypress
 yarn cypress:run - Run Cypress
+yarn audit - Check for known vulnerabilities
 ```
 
 ## Commands Used to Build Project
