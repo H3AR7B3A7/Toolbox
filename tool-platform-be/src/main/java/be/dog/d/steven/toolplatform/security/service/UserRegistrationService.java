@@ -17,9 +17,7 @@ public class UserRegistrationService {
         ToolPlatformUser user = userRepository.findByUsername(userRegistrationRequest.getUsername());
         if (user == null) {
             ToolPlatformUser savedUser = userRepository.save(new ToolPlatformUser(userRegistrationRequest));
-            log.info("New user registered:" + savedUser.getUsername());
-        } else {
-            log.info("User logged in:" + userRegistrationRequest.getUsername());
+            log.info("New user registered: " + savedUser.getUsername());
         }
     }
 }
