@@ -161,5 +161,4 @@ hs_err_pid*
 **/Thumbs.db
 
 ## Storybook
-**/.storybook/
 **/storybook-static/
