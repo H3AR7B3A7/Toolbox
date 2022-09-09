@@ -316,7 +316,7 @@
         },
         {
             "name": "NavBarComponent",
-            "id": "component-NavBarComponent-c6bd9614e34748da41ed2209e003d9073ab3307be17a70aa7e06f417881b8a7859b92e070ae166a335590ef67d0caec0f995b298178e4ea1653f4bd02b537b87",
+            "id": "component-NavBarComponent-a26ebfa1549483b7f7ce5078f1c3e236397428ee6ba013271ea044bd47098f87be9abdde7173468b56a73de3d229867ad04bff3267b9ecb3ce5348ef53039c4b",
             "file": "src/app/core/nav-bar/nav-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -334,7 +334,18 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "loggedIn",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -343,7 +354,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'nav-bar',\r\n  templateUrl: './nav-bar.component.html',\r\n  styleUrls: ['./nav-bar.component.scss']\r\n})\r\nexport class NavBarComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'nav-bar',\r\n  templateUrl: './nav-bar.component.html',\r\n  styleUrls: ['./nav-bar.component.scss']\r\n})\r\nexport class NavBarComponent {\r\n  loggedIn = false\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -352,7 +363,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div>\r\n  <img src=\"favicon.svg\" alt=\"logo\" routerLink=\"/\">\r\n  <button mat-stroked-button color=\"accent\">Login</button>\r\n</div>\r\n"
+            "templateData": "<div>\r\n  <img src=\"favicon.svg\" alt=\"logo\" routerLink=\"/\">\r\n  <button *ngIf=\"!loggedIn\" mat-stroked-button color=\"accent\">Log in</button>\r\n  <button *ngIf=\"loggedIn\" mat-stroked-button color=\"accent\">Log out</button>\r\n</div>\r\n"
         }
     ],
     "modules": [
@@ -551,7 +562,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/api/',\r\n  telemetryUrl: 'http://localhost:8080/api/metrics/'\r\n}"
+                "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
             },
             {
                 "name": "environment",
@@ -561,7 +572,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/api/',\r\n  telemetryUrl: 'http://localhost:4200/api/metrics/'\r\n}"
+                "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/core/nav-bar/nav-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -590,6 +611,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/core/nav-bar/nav-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -609,7 +640,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/api/',\r\n  telemetryUrl: 'http://localhost:8080/api/metrics/'\r\n}"
+                    "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -621,7 +652,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/api/',\r\n  telemetryUrl: 'http://localhost:4200/api/metrics/'\r\n}"
+                    "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
                 }
             ]
         },
@@ -685,7 +716,7 @@
                 "linktype": "component",
                 "name": "NavBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -694,6 +725,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/nav-bar/nav-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
