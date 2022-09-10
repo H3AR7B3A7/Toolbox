@@ -13,7 +13,6 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -34,8 +33,16 @@ public class SecurityConfiguration {
                 .authenticationEntryPoint(new AuthenticationEntryPoint())
                 .and()
                 .authorizeRequests(authorize -> authorize
-                        .mvcMatchers("/", "/metrics/*").permitAll()
-                        .anyRequest().authenticated()
+                        .mvcMatchers("/",
+                                "/metrics/*",
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/v3/api-docs.yaml"
+                        )
+                        .permitAll()
+                        .anyRequest()
+                        .authenticated()
                 )
                 .oauth2Login(oauth2Login -> oauth2Login
                         .successHandler(this.authenticationSuccessHandler)
@@ -58,7 +65,7 @@ class AuthenticationEntryPoint extends LoginUrlAuthenticationEntryPoint {
     }
 
     @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException {
         response.sendError(401, "Unauthorized");
     }
 }
