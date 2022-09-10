@@ -1,13 +1,26 @@
-# Toolbox
+# Toolbox Service
 
-## Random Notes
+## Service
 
-http://localhost:8080/toolbox-service/
-http://localhost:8080/toolbox-service/login
-http://localhost:8080/toolbox-service/logout
-http://localhost:8080/toolbox-service/h2-console
+[Main](http://localhost:8080/toolbox-service/)
+
+[Login](http://localhost:8080/toolbox-service/login)
+
+[Logout](http://localhost:8080/toolbox-service/logout)
+
+## H2 Database
+
+[H2 Console](http://localhost:8080/toolbox-service/h2-console)
 
 username: sa
 password:
 
 SELECT * FROM TOOL_PLATFORM_USER
+
+## OpenAPI
+
+[UI](http://localhost:8080/toolbox-service/swagger-ui.html)
+
+[Json](http://localhost:8080/toolbox-service/v3/api-docs)
+
+[Yaml](http://localhost:8080/toolbox-service/v3/api-docs.yaml)
