@@ -9,7 +9,6 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,7 +19,6 @@ import java.io.IOException;
 public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHandler {
 
     private final UserRegistrationService userRegistrationService;
-    private final ServletContext servletContext;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
@@ -35,6 +33,6 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
         
         this.userRegistrationService.registerNewUser(registrationRequest);
         log.info("User logged in: " + authentication.getName());
-        response.sendRedirect(servletContext.getContextPath());
+        response.sendRedirect("http://localhost:4200/toolbox-ui");
     }
 }

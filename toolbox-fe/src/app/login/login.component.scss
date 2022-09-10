@@ -1,0 +1,27 @@
+@import "src/assets/styles/colors";
+@import "src/assets/styles/variables";
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: calc(100% - $header-height);
+
+  h1 {
+    padding-bottom: 2rem;
+    width: 13rem;
+    border-bottom: solid $primary 1px;
+  }
+
+  & img {
+    margin-right: 15px;
+  }
+
+  & button {
+    padding: 5px 23px;
+    border-radius: 25px;
+  }
+}

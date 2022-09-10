@@ -17,6 +17,10 @@ yarn cypress:run - Run Cypress
 yarn audit - Check for known vulnerabilities
 ```
 
+## Storybook
+
+Check out the [Storybook](https://6317ba136ba081048e962a53-gsfgvtcefs.chromatic.com/?path=/story/info-tools-platform--page).
+
 ## Commands Used to Build Project
 
 ### Scaffolding

@@ -1,5 +1,5 @@
 <div>
   <img src="favicon.svg" alt="logo" routerLink="/">
-  <button *ngIf="!loggedIn" mat-stroked-button color="accent">Log in</button>
-  <button *ngIf="loggedIn" mat-stroked-button color="accent">Log out</button>
+  <button *ngIf="!loggedIn" mat-stroked-button color="accent" routerLink="/login">Log in</button>
+  <button *ngIf="loggedIn" mat-stroked-button color="accent" routerLink="/logout">Log out</button>
 </div>
