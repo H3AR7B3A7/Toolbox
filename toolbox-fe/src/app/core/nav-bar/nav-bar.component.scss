@@ -1,0 +1,19 @@
+@import 'src/assets/styles/colors';
+@import 'src/assets/styles/variables';
+
+div {
+  background-color: $primary-darkest;
+  display: flex;
+  justify-content: space-between;
+  height: $header-height;
+
+  & img {
+    margin: auto 0 auto 10px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  & button {
+    margin: 5px;
+  }
+}

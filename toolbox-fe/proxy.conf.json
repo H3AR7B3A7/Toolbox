@@ -1,0 +1,20 @@
+{
+  "/toolbox-ui/*": {
+    "target": "http://localhost:4200/",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/toolbox-ui": ""
+    }
+  },
+  "/toolbox-service/*": {
+    "target": "http://localhost:8080/toolbox-service/",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/toolbox-service": ""
+    }
+  }
+}
