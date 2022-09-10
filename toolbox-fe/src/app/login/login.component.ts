@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
-import {environment} from "../../environments/environment";
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +7,7 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
   login() {
-    window.location.href = environment.apiUrl + "oauth2/authorization/google"
+    window.location.href = environment.apiUrl + 'oauth2/authorization/google';
   }
 }

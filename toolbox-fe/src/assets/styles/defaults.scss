@@ -1,8 +1,8 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-@import "src/assets/styles/theme";
-@import "src/assets/styles/colors";
+@import 'src/assets/styles/theme';
+@import 'src/assets/styles/colors';
 
 * {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
@@ -16,9 +16,11 @@ body {
   background-color: $white;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: $primary;
-  font-family: AmaticSC-Regular, sans-serif  !important;
+  font-family: AmaticSC-Regular, sans-serif !important;
 }
 
 h1 {
@@ -28,5 +30,5 @@ h1 {
 
 @font-face {
   font-family: 'AmaticSC-Regular';
-  src: url('../fonts/AmaticSC-Regular.ttf')  format('truetype');
+  src: url('../fonts/AmaticSC-Regular.ttf') format('truetype');
 }
