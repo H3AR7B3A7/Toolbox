@@ -315,8 +315,59 @@
             "templateData": "Status: {{ appStatus$ | async }}\r\n\r\nUsers: {{ userCount$ | async }}\r\n"
         },
         {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-5e94ec7167eaf2dbabfa929bd4d442846d24dd635b5e73389a16a864e660d30cebec3d9ccfe0d4fe66e01eaed5bcd431554e15e0955eb64429d264b37dd70308",
+            "file": "src/app/login/login.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-login",
+            "styleUrls": [
+                "./login.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "login",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 10,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { environment } from '../../environments/environment';\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss']\n})\nexport class LoginComponent {\n  login() {\n    window.location.href = environment.apiUrl + 'oauth2/authorization/google';\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import 'src/assets/styles/colors';\r\n@import 'src/assets/styles/variables';\r\n\r\n.container {\r\n  text-align: center;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: auto;\r\n  height: calc(100% - $header-height);\r\n\r\n  h1 {\r\n    padding-bottom: 2rem;\r\n    width: 13rem;\r\n    border-bottom: solid $primary 1px;\r\n  }\r\n\r\n  & img {\r\n    margin-right: 15px;\r\n  }\r\n\r\n  & button {\r\n    padding: 5px 23px;\r\n    border-radius: 25px;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./login.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"container\">\n  <h1>Log in</h1>\n  <button mat-raised-button (click)=\"login()\">\n    <img src=\"assets/img/google-logo.svg\" alt=\"google-logo\" /> Sign in with\n    Google\n  </button>\n</div>\n"
+        },
+        {
             "name": "NavBarComponent",
-            "id": "component-NavBarComponent-a26ebfa1549483b7f7ce5078f1c3e236397428ee6ba013271ea044bd47098f87be9abdde7173468b56a73de3d229867ad04bff3267b9ecb3ce5348ef53039c4b",
+            "id": "component-NavBarComponent-3e3d87e41f5084dd31065db1bb073fa5a1e7e604150010bc9c0e8c1687ee02fa46ff5977b99296fee817a2b6d9039b7516978d2ce402d30b7121edb5484aff8d",
             "file": "src/app/core/nav-bar/nav-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -354,28 +405,28 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'nav-bar',\r\n  templateUrl: './nav-bar.component.html',\r\n  styleUrls: ['./nav-bar.component.scss']\r\n})\r\nexport class NavBarComponent {\r\n  loggedIn = false\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'nav-bar',\r\n  templateUrl: './nav-bar.component.html',\r\n  styleUrls: ['./nav-bar.component.scss']\r\n})\r\nexport class NavBarComponent {\r\n  loggedIn = false;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"src/assets/styles/colors\";\r\n\r\ndiv {\r\n  background-color: $primary-darkest;\r\n  display: flex;\r\n  justify-content: space-between;\r\n\r\n  & img {\r\n    margin: auto 0 auto 10px;\r\n    height: 30px;\r\n    cursor: pointer;\r\n  }\r\n\r\n  & button {\r\n    margin: 5px;\r\n  }\r\n}\r\n",
+                    "data": "@import 'src/assets/styles/colors';\r\n@import 'src/assets/styles/variables';\r\n\r\ndiv {\r\n  background-color: $primary-darkest;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  height: $header-height;\r\n\r\n  & img {\r\n    margin: auto 0 auto 10px;\r\n    height: 30px;\r\n    cursor: pointer;\r\n  }\r\n\r\n  & button {\r\n    margin: 5px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./nav-bar.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div>\r\n  <img src=\"favicon.svg\" alt=\"logo\" routerLink=\"/\">\r\n  <button *ngIf=\"!loggedIn\" mat-stroked-button color=\"accent\">Log in</button>\r\n  <button *ngIf=\"loggedIn\" mat-stroked-button color=\"accent\">Log out</button>\r\n</div>\r\n"
+            "templateData": "<div>\r\n  <img src=\"favicon.svg\" alt=\"logo\" routerLink=\"/\" />\r\n  <button\r\n    *ngIf=\"!loggedIn\"\r\n    mat-stroked-button\r\n    color=\"accent\"\r\n    routerLink=\"/login\"\r\n  >\r\n    Log in\r\n  </button>\r\n  <button\r\n    *ngIf=\"loggedIn\"\r\n    mat-stroked-button\r\n    color=\"accent\"\r\n    routerLink=\"/logout\"\r\n  >\r\n    Log out\r\n  </button>\r\n</div>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-a88cb0564af23558bf7e56b30a06b084e6ad3077f6d743872b7c674b9deaa653e779282bb2053db77874b40abdc7883437d6d00778e71f8d24445990682ef294",
+            "id": "module-AppModule-704dd651a108086e894fe1081ef8689dc7b1774d9da38b7e7657669ed85677000b5228ddcefd2b8fcab25225281e01437df5019af80f5d75603efcbf1e2e13d0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from '@app/app.component';\r\nimport { HomeComponent } from '@app/home/home.component';\r\nimport { CoreModule } from '@app/core/core.module';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent, HomeComponent],\r\n  imports: [BrowserModule, CoreModule],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from '@app/app.component';\r\nimport { HomeComponent } from '@app/home/home.component';\r\nimport { CoreModule } from '@app/core/core.module';\r\nimport { LoginComponent } from './login/login.component';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent, HomeComponent, LoginComponent],\r\n  imports: [BrowserModule, CoreModule],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -389,6 +440,9 @@
                         },
                         {
                             "name": "HomeComponent"
+                        },
+                        {
+                            "name": "LoginComponent"
                         }
                     ]
                 },
@@ -420,13 +474,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-7e81aa756f44545cbbf68ced94d678634d007342a818da7f7570971bc869a92732c3b8e9f35baf9c54824311b38747713cff21d87947930616d8ba4e37d52c85",
+            "id": "module-AppRoutingModule-2dc470be07cce3bc2d6a25ea2b9b969210536f6d6f1b9820c2fd10a0d8cee9b970f464e0646299c72a798d84322b6e9a0e789d763cad6eaa933ec97756cca9ce",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/core/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nimport { HomeComponent } from '../home/home.component';\r\n\r\nconst routes: Routes = [{ path: '', component: HomeComponent }];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nimport { HomeComponent } from '../home/home.component';\r\nimport { LoginComponent } from '@app/login/login.component';\r\n\r\nconst routes: Routes = [\r\n  { path: '', component: HomeComponent },\r\n  { path: 'login', component: LoginComponent }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -456,13 +510,13 @@
         },
         {
             "name": "CoreModule",
-            "id": "module-CoreModule-2ff5536cc6d0ad49d6282ce26615d2a715abcdd1458adde3fc532fd3b84cb1cfb835ba2efa44b3aa8e846ce68b9b885c33b7a4d34058442e6e50fd8f517506f1",
+            "id": "module-CoreModule-7dc9bebc8685bc33c8992db7401d4a9f040ed229c0528c2a220e3e810c8ce11da3726afe4e289b098919b0e02682805ae5e4ce381c8afd23695b903627962e52",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/core/core.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { NavBarComponent } from './nav-bar/nav-bar.component';\r\nimport { MatButtonModule } from \"@angular/material/button\";\r\n\r\n@NgModule({\r\n  declarations: [NavBarComponent],\r\n  imports: [\r\n    CommonModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule,\r\n    HttpClientModule,\r\n    MatButtonModule\r\n  ],\r\n  exports: [AppRoutingModule, NavBarComponent, BrowserAnimationsModule]\r\n})\r\nexport class CoreModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { NavBarComponent } from './nav-bar/nav-bar.component';\r\nimport { SharedModule } from '@app/shared/shared.module';\r\n\r\n@NgModule({\r\n  declarations: [NavBarComponent],\r\n  imports: [CommonModule, AppRoutingModule, HttpClientModule, SharedModule],\r\n  exports: [AppRoutingModule, NavBarComponent, SharedModule]\r\n})\r\nexport class CoreModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -481,6 +535,9 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "SharedModule"
                         }
                     ]
                 },
@@ -492,6 +549,9 @@
                         },
                         {
                             "name": "NavBarComponent"
+                        },
+                        {
+                            "name": "SharedModule"
                         }
                     ]
                 },
@@ -507,13 +567,13 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-ae235678f3a4701b4ce3500c49d2f3b724ab6f505c561b2276acacad5fc77cf981e43c466927b4890123da4dd1ecb916352e6e8ea041ef1338414d7fd9371fbf",
+            "id": "module-SharedModule-62b6f5e5b526fc413e3768578880f614910e2b65e3d7437d4e3dded05beb9bbc7e27eec1d442b7df790219000e0dd03f6e8f6c01f1b4961b5cd7eceb656ac91e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  imports: [CommonModule],\r\n  exports: [CommonModule]\r\n})\r\nexport class SharedModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  imports: [CommonModule, MatButtonModule, BrowserAnimationsModule],\r\n  exports: [CommonModule, MatButtonModule, BrowserAnimationsModule]\r\n})\r\nexport class SharedModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -548,6 +608,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/login/login.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/core/nav-bar/nav-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -558,21 +628,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
             },
             {
                 "name": "LoggedIn",
@@ -588,17 +658,49 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/login/login.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args\r\n  }\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/core/nav-bar/nav-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args\r\n  }\r\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/login/login.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/login/login.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/login/login.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args\r\n  }\r\n})"
+                }
+            ],
             "src/app/core/nav-bar/nav-bar.stories.ts": [
                 {
                     "name": "Default",
@@ -628,19 +730,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
-                }
-            ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
+                    "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args\r\n  }\r\n})"
                 }
             ],
             "src/environments/environment.ts": [
@@ -653,6 +743,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
                 }
             ]
         },
@@ -673,6 +775,10 @@
                     {
                         "path": "",
                         "component": "HomeComponent"
+                    },
+                    {
+                        "path": "login",
+                        "component": "LoginComponent"
                     }
                 ],
                 "kind": "module"
@@ -774,6 +880,35 @@
                 "name": "HomeComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/login/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/login/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/login/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

@@ -1,11 +1,11 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MatButtonModule } from '@angular/material/button';
 
-import { NavBarComponent } from './nav-bar.component';
+import {LoginComponent} from "@app/login/login.component";
 
 export default {
-  component: NavBarComponent,
-  title: 'Home Page/NavBar',
+  component: LoginComponent,
+  title: 'Login Page/OAuth Options',
   excludeStories: /.*Data$/,
   decorators: [
     moduleMetadata({
@@ -21,11 +21,3 @@ const Template: Story = (args) => ({
 });
 
 export const Default = Template.bind({});
-Default.args = {
-  loggedIn: false
-};
-
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  loggedIn: true
-};
