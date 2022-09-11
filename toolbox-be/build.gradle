@@ -41,3 +41,41 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// Task to only run Unit tests
+
+def unitTest = sourceSets.create('unitTest')
+
+configurations[unitTest.implementationConfigurationName].extendsFrom(configurations.testImplementation)
+configurations[unitTest.runtimeOnlyConfigurationName].extendsFrom(configurations.testRuntimeOnly)
+
+def unitTestTask = tasks.register('unitTest', Test) {
+    description = 'Runs unit tests.'
+    group = 'verification'
+    useJUnitPlatform()
+
+    exclude '**/**IT.class'
+}
+
+// Task to only run Integration tests
+
+def integrationTest = sourceSets.create('integrationTest')
+
+configurations[integrationTest.implementationConfigurationName].extendsFrom(configurations.testImplementation)
+configurations[integrationTest.runtimeOnlyConfigurationName].extendsFrom(configurations.testRuntimeOnly)
+
+def integrationTestTask = tasks.register('integrationTest', Test) {
+    description = 'Runs unit tests.'
+    group = 'verification'
+    useJUnitPlatform()
+
+    include '**/**IT.class'
+}
+
+// Convenience flag for skipping Integration tests= -PskipIT
+
+test {
+    if (project.hasProperty('skipIT')) {
+        exclude '**/**IT.class'
+    }
+}
