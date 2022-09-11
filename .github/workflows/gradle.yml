@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: toolbox-fe
+        working-directory: toolbox-be
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
@@ -17,4 +17,4 @@ jobs:
         with:
           gradle-version: 7.5
       - name: Execute Gradle tests
-        run: ./toolbox-be/gradlew -b toolbox-be/build.gradle test
+        run: ./gradlew test
