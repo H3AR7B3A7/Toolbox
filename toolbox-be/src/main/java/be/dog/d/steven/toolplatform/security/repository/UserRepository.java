@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<ToolboxUser, Long> {
 
-    ToolboxUser findByUsername(String username);
+    ToolboxUser findByUserName(String username);
 }

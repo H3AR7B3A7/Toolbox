@@ -23,7 +23,7 @@ public class ToolboxUser {
     @Column(unique = true)
 
     @Setter
-    private String username;
+    private String userName;
     @Setter
     private String firstName;
     @Setter
@@ -32,7 +32,7 @@ public class ToolboxUser {
     private String email;
 
     public ToolboxUser(UserRegistrationRequest userRegistration) {
-        this.username = userRegistration.getUsername();
+        this.userName = userRegistration.getUsername();
         this.email = userRegistration.getEmail();
         this.firstName = userRegistration.getFirstname();
         this.lastName = userRegistration.getLastname();

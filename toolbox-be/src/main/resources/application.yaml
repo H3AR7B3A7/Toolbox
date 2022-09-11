@@ -7,17 +7,15 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:default;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/toolbox
+    username: root
+    password: ${DATABASE_ROOT_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: true
-    generate-ddl: true
     hibernate:
-      ddl-auto: create
-    show-sql: true
-    database-platform: org.hibernate.dialect.H2Dialect
+      ddl-auto: none
   security:
     oauth2:
       client:
@@ -31,6 +29,9 @@ spring:
 server:
   servlet:
     context-path: /toolbox-service
+  error:
+    whitelabel:
+      enabled: false
 
 ---
 

@@ -1,1 +1,9 @@
-rootProject.name = 'toolbox'
+rootProject.name = 'toolbox-be'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            library('springdoc', 'org.springdoc:springdoc-openapi-ui:1.6.11')
+        }
+    }
+}

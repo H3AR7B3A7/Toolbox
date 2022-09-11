@@ -14,10 +14,10 @@ public class UserRegistrationService {
     private final UserRepository userRepository;
 
     public void registerNewUser(UserRegistrationRequest userRegistrationRequest) {
-        ToolboxUser user = userRepository.findByUsername(userRegistrationRequest.getUsername());
+        ToolboxUser user = userRepository.findByUserName(userRegistrationRequest.getUsername());
         if (user == null) {
             ToolboxUser savedUser = userRepository.save(new ToolboxUser(userRegistrationRequest));
-            log.info("New user registered: " + savedUser.getUsername());
+            log.info("New user registered: " + savedUser.getUserName());
         }
     }
 }
