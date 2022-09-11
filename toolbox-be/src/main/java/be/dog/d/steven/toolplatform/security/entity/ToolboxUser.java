@@ -13,10 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TOOL_PLATFORM_USER")
+@Table(name = "TOOLBOX_USER")
 @NoArgsConstructor
 @Getter
-public class ToolPlatformUser {
+public class ToolboxUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,7 +31,7 @@ public class ToolPlatformUser {
     @Setter
     private String email;
 
-    public ToolPlatformUser(UserRegistrationRequest userRegistration) {
+    public ToolboxUser(UserRegistrationRequest userRegistration) {
         this.username = userRegistration.getUsername();
         this.email = userRegistration.getEmail();
         this.firstName = userRegistration.getFirstname();

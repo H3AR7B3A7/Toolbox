@@ -1,9 +1,9 @@
 package be.dog.d.steven.toolplatform.security.repository;
 
-import be.dog.d.steven.toolplatform.security.entity.ToolPlatformUser;
+import be.dog.d.steven.toolplatform.security.entity.ToolboxUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<ToolPlatformUser, Long> {
+public interface UserRepository extends JpaRepository<ToolboxUser, Long> {
 
-    ToolPlatformUser findByUsername(String username);
+    ToolboxUser findByUsername(String username);
 }
