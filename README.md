@@ -50,9 +50,7 @@ _New ideas for features are always welcome too._
 
 `<type>/<number>-<optional description>`
 
-Example:
-
-`feature/1-SSO`
+Example: `feature/1-SSO`
 
 #### Types
 
