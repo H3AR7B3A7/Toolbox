@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  db:
+    image: 'mysql:latest'
+    container_name: mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - PMA_ARBITRARY=1
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=toolbox
+  db_manager:
+    image: 'phpmyadmin:latest'
+    container_name: phpmyadmin
+    ports:
+      - '8081:80'
+    environment:
+      - PMA_HOST=mysql

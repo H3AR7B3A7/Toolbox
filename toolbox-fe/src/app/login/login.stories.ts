@@ -1,7 +1,7 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MatButtonModule } from '@angular/material/button';
 
-import {LoginComponent} from "@app/login/login.component";
+import { LoginComponent } from '@app/login/login.component';
 
 export default {
   component: LoginComponent,
