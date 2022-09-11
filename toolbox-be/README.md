@@ -24,3 +24,21 @@ SELECT * FROM TOOL_PLATFORM_USER
 [Json](http://localhost:8080/toolbox-service/v3/api-docs)
 
 [Yaml](http://localhost:8080/toolbox-service/v3/api-docs.yaml)
+
+## Tests
+
+### All Tests:
+
+> gradle test
+
+### Unit Tests
+
+> gradle test -PskipIT
+
+or
+
+> gradle unitTest
+
+### Integration Tests
+
+> gradle integrationTest
