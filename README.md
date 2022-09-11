@@ -31,7 +31,7 @@ A platform for all sorts of tooling.
 
 - Database & management: `./docker-setup.sh`
 - Local projects:
-  - Service: `gradle -b toolbox-be/build.gradle bootRun`
+  - Service: `./toolbox-be/gradlew -b toolbox-be/build.gradle bootRun`
   - UI: `yarn --cwd toolbox-fe` &  `yarn --cwd toolbox-fe start`
 
 _These commands should be run from this directory._
