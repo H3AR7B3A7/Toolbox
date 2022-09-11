@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE.md)
-![Issues](https://img.shields.io/github/issues/h3ar7b3a7/Toolbox)
-![Pull Requests](https://img.shields.io/github/issues-pr-raw/h3ar7b3a7/Toolbox)
+[![Issues](https://img.shields.io/github/issues/h3ar7b3a7/Toolbox)](https://github.com/H3AR7B3A7/Toolbox/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr-raw/h3ar7b3a7/Toolbox)](https://github.com/H3AR7B3A7/Toolbox/pulls)
 
 # Toolbox
 
