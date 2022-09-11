@@ -17,4 +17,4 @@ jobs:
         with:
           gradle-version: 7.5
       - name: Execute Gradle tests
-        run: ./gradlew test
+        run: ./toolbox-be/gradlew -b toolbox-be/build.gradle test
