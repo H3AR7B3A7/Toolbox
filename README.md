@@ -31,8 +31,8 @@ A platform for all sorts of tooling.
 
 - Database & management: `./docker-setup.sh`
 - Local projects:
-  - Service: `./toolbox-be/gradlew -b toolbox-be/build.gradle bootRun`
-  - UI: `yarn --cwd toolbox-fe` &  `yarn --cwd toolbox-fe start`
+    - Service: `./toolbox-be/gradlew -b toolbox-be/build.gradle bootRun`
+    - UI: `yarn --cwd toolbox-fe` &  `yarn --cwd toolbox-fe start`
 
 _These commands should be run from this directory._
 
@@ -44,17 +44,30 @@ Feel free to pick up a ticket and make a pull request.
 
 _New ideas for features are always welcome too._
 
-### Rules
+### Branches
 
-Branch naming convention:
+#### Naming convention
 
 `<type>/<number>-<optional description>`
 
-Example:
+Example: `feature/1-SSO`
 
-`feature/1-SSO`
+#### Types
 
-Types:
 - feature
 - task
 - doc
+
+### Commits
+
+#### Recommended emoji
+
+- :sparkles: - New feature
+- :bug: - Bugfix
+- :ambulance: - Remove vulnerability
+- :memo: - Documentation
+- :microscope: - Test (configuration)
+- :building_construction: Project structure
+- :recycle: - Refactor
+- :stethoscope: - GitHub Actions
+- :see_no_evil: - Git Ignore
