@@ -316,7 +316,7 @@
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-5e94ec7167eaf2dbabfa929bd4d442846d24dd635b5e73389a16a864e660d30cebec3d9ccfe0d4fe66e01eaed5bcd431554e15e0955eb64429d264b37dd70308",
+            "id": "component-LoginComponent-99d7c0bb272715568ad394f3116f048c1291048bb6956cb88e6efe4e7600b2db3a870c7e305eed321b00238f88230977696cacf66568053d8ebdf2e6b172e68e",
             "file": "src/app/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -354,7 +354,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { environment } from '../../environments/environment';\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss']\n})\nexport class LoginComponent {\n  login() {\n    window.location.href = environment.apiUrl + 'oauth2/authorization/google';\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { environment } from '../../environments/environment';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.scss']\r\n})\r\nexport class LoginComponent {\r\n  login() {\r\n    window.location.href = environment.apiUrl + 'oauth2/authorization/google';\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -363,7 +363,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"container\">\n  <h1>Log in</h1>\n  <button mat-raised-button (click)=\"login()\">\n    <img src=\"assets/img/google-logo.svg\" alt=\"google-logo\" /> Sign in with\n    Google\n  </button>\n</div>\n"
+            "templateData": "<div class=\"container\">\r\n  <h1>Log in</h1>\r\n  <button mat-raised-button (click)=\"login()\">\r\n    <img src=\"assets/img/google-logo.svg\" alt=\"google-logo\" /> Sign in with\r\n    Google\r\n  </button>\r\n</div>\r\n"
         },
         {
             "name": "NavBarComponent",
@@ -628,21 +628,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
             },
             {
                 "name": "LoggedIn",
@@ -733,18 +733,6 @@
                     "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args\r\n  }\r\n})"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -755,6 +743,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true,\r\n  apiUrl: 'http://localhost:8080/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:8080/toolbox-service/metrics/'\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false,\r\n  apiUrl: 'http://localhost:4200/toolbox-service/',\r\n  telemetryUrl: 'http://localhost:4200/toolbox-service/metrics/'\r\n}"
                 }
             ]
         },
