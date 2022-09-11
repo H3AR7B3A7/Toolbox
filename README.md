@@ -67,7 +67,7 @@ Example: `feature/1-SSO`
 - :ambulance: - Remove vulnerability
 - :memo: - Documentation
 - :microscope: - Test (configuration)
-- :building_construction: Project structure
+- :building_construction: - Project structure
 - :recycle: - Refactor
 - :stethoscope: - GitHub Actions
 - :see_no_evil: - Git Ignore
