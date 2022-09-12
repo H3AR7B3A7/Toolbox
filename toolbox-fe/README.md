@@ -19,7 +19,7 @@ yarn audit - Check for known vulnerabilities
 
 ## Storybook
 
-Check out the Storybook hosted on [Chromatic](https://6317ba136ba081048e962a53-gsfgvtcefs.chromatic.com/?path=/story/info-tools-platform--page),
+Check out the Storybook hosted on [Chromatic](https://www.chromatic.com/builds?appId=6317ba136ba081048e962a53),
 or [locally](http://localhost:6006/) after running `yarn storybook`.
 
 ## Commands Used to Build Project
