@@ -31,6 +31,6 @@ export const LoggedIn = Template.bind({});
 LoggedIn.args = {
   loggedIn: of(true),
   picture: of(
-    'https://github.com/H3AR7B3A7/Toolbox/tree/master/toolbox-fe/.storybook/public/profile-picture.png'
+    'https://raw.githubusercontent.com/H3AR7B3A7/Toolbox/master/toolbox-fe/.storybook/public/profile-picture.png'
   )
 };
