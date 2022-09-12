@@ -1,11 +1,26 @@
 @import 'src/assets/styles/colors';
 @import 'src/assets/styles/variables';
 
-div {
+.nav-bar {
   background-color: $primary-darkest;
   display: flex;
   justify-content: space-between;
   height: $header-height;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+
+    & h2 {
+      margin: 0 10px;
+      color: $accent-light;
+    }
+  }
+
+  .navbar-btn {
+    display: flex;
+    margin: 0 10px;
+  }
 
   & img {
     margin: auto 0 auto 10px;

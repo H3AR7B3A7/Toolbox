@@ -3,6 +3,7 @@ spring:
     name: Toolbox
     description: A platform for all sorts of tooling.
     version: v1
+    domain-address: http://localhost:4200/toolbox-ui
   h2:
     console:
       enabled: true

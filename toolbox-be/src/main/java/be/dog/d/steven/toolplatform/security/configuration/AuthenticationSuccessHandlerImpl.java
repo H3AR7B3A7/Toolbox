@@ -4,6 +4,7 @@ import be.dog.d.steven.toolplatform.security.model.UserRegistrationRequest;
 import be.dog.d.steven.toolplatform.security.service.UserRegistrationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -19,6 +20,8 @@ import java.io.IOException;
 public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHandler {
 
     private final UserRegistrationService userRegistrationService;
+    @Value("${spring.application.domain-address}")
+    private String domainAddress;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
@@ -33,6 +36,6 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
         
         this.userRegistrationService.registerNewUser(registrationRequest);
         log.info("User logged in: " + authentication.getName());
-        response.sendRedirect("http://localhost:4200/toolbox-ui");
+        response.sendRedirect(domainAddress);
     }
 }
