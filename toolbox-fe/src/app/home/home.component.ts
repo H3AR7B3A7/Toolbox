@@ -4,7 +4,6 @@ import { Observable, pluck } from 'rxjs';
 import { TelemetryService } from '../core/telemetry.service';
 
 @Component({
-  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

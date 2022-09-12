@@ -1,19 +1,29 @@
-<div>
-  <img src="favicon.svg" alt="logo" routerLink="/" />
-  <button
-    *ngIf="!loggedIn"
-    mat-stroked-button
-    color="accent"
-    routerLink="/login"
-  >
-    Log in
-  </button>
-  <button
-    *ngIf="loggedIn"
-    mat-stroked-button
-    color="accent"
-    routerLink="/logout"
-  >
-    Log out
-  </button>
+<div class="nav-bar">
+  <div class="navbar-brand">
+    <img src="favicon.svg" alt="logo" routerLink="/" />
+    <h2>Toolbox</h2>
+  </div>
+  <div class="navbar-btn">
+    <button
+      *ngIf="(loggedIn | async) === false"
+      mat-stroked-button
+      color="accent"
+      routerLink="/login"
+    >
+      Log in
+    </button>
+    <button
+      *ngIf="loggedIn | async"
+      mat-stroked-button
+      color="accent"
+      (click)="logout()"
+    >
+      Log out
+    </button>
+    <img
+      *ngIf="picture | async"
+      [src]="picture | async"
+      alt="profile-picture"
+    />
+  </div>
 </div>
