@@ -1,9 +1,18 @@
 rootProject.name = 'toolbox-be'
 
 dependencyResolutionManagement {
-    versionCatalogs {
-        libs {
-            library('springdoc', 'org.springdoc:springdoc-openapi-ui:1.6.11')
-        }
-    }
+	versionCatalogs {
+		libs {
+			version('spring', '2.7.3')
+			version('depManagement', '1.0.13.RELEASE')
+			version('spotless', '6.10.0')
+			version('springdoc', '1.6.11')
+
+			plugin('springboot', 'org.springframework.boot').versionRef('spring')
+			plugin('depManagement', 'io.spring.dependency-management').versionRef('depManagement')
+			plugin('spotless', 'com.diffplug.spotless').versionRef('spotless')
+
+			library('springdoc', 'org.springdoc', 'springdoc-openapi-ui').versionRef('springdoc')
+		}
+	}
 }
