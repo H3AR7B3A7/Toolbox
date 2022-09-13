@@ -1,81 +1,120 @@
+//----------------------------------//
+//              PLUGINS             //
+//----------------------------------//
+
 plugins {
-    id 'org.springframework.boot' version '2.7.3'
-    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
-    id 'java'
+	alias(libs.plugins.springboot)
+	alias(libs.plugins.depManagement)
+	alias(libs.plugins.spotless)
+	id 'java'
 }
+
+//----------------------------------//
+//           CONFIGURATION          //
+//----------------------------------//
 
 group = 'be.dog.d.steven'
 version = '0.0.1-SNAPSHOT'
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-}
+java { sourceCompatibility = JavaVersion.VERSION_17 }
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
+configurations { compileOnly { extendsFrom annotationProcessor } }
 
-repositories {
-    mavenCentral()
-}
+repositories { mavenCentral() }
+
+//----------------------------------//
+//           DEPENDENCIES           //
+//----------------------------------//
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation libs.springdoc
-    implementation 'mysql:mysql-connector-java'
-    compileOnly 'org.flywaydb:flyway-core'
-    compileOnly "org.flywaydb:flyway-mysql"
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation libs.springdoc
+	implementation 'mysql:mysql-connector-java'
+	compileOnly 'org.flywaydb:flyway-core'
+	compileOnly "org.flywaydb:flyway-mysql"
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.h2database:h2'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+//----------------------------------//
+//             SPOTLESS             //
+//----------------------------------//
+
+spotless {
+	java {
+		importOrder()
+		removeUnusedImports()
+		palantirJavaFormat()
+		prettier(['prettier-plugin-java': '1.5.0']).config(['parser': 'java', 'tabWidth' : 4])
+	}
+	groovyGradle { greclipse("4.6.3") }
+	sql {
+		target 'src/main/resources/db/migration/**/*.sql'
+		dbeaver()
+	}
+	format 'html', {
+		target 'src/main/resources/static/**/*.html', 'src/resources/templates/**/*.html'
+		prettier()
+	}
+	format 'styling', {
+		target 'src/main/resources/static/css/**/*.css'
+		prettier()
+	}
 }
 
-// Task to only run Unit tests
+//----------------------------------//
+//               TASKS              //
+//----------------------------------//
+
+tasks.named('test') { useJUnitPlatform() }
+
+/**
+ * Task to only run Unit tests
+ */
 
 def unitTest = sourceSets.create('unitTest')
 
 configurations[unitTest.implementationConfigurationName].extendsFrom(configurations.testImplementation)
 configurations[unitTest.runtimeOnlyConfigurationName].extendsFrom(configurations.testRuntimeOnly)
 
-def unitTestTask = tasks.register('unitTest', Test) {
-    description = 'Runs unit tests.'
-    group = 'verification'
-    useJUnitPlatform()
+tasks.register('unitTest', Test) {
+	description = 'Runs unit tests.'
+	group = 'verification'
+	useJUnitPlatform()
 
-    exclude '**/**IT.class'
+	exclude '**/**IT.class'
 }
 
-// Task to only run Integration tests
+/**
+ * Task to only run Integration tests
+ */
 
 def integrationTest = sourceSets.create('integrationTest')
 
 configurations[integrationTest.implementationConfigurationName].extendsFrom(configurations.testImplementation)
 configurations[integrationTest.runtimeOnlyConfigurationName].extendsFrom(configurations.testRuntimeOnly)
 
-def integrationTestTask = tasks.register('integrationTest', Test) {
-    description = 'Runs unit tests.'
-    group = 'verification'
-    useJUnitPlatform()
+tasks.register('integrationTest', Test) {
+	description = 'Runs unit tests.'
+	group = 'verification'
+	useJUnitPlatform()
 
-    include '**/**IT.class'
+	include '**/**IT.class'
 }
 
-// Convenience flag for skipping Integration tests= -PskipIT
+/**
+ * Convenience flag for skipping Integration tests= -PskipIT
+ */
 
 test {
-    if (project.hasProperty('skipIT')) {
-        exclude '**/**IT.class'
-    }
+	if (project.hasProperty('skipIT')) {
+		exclude '**/**IT.class'
+	}
 }

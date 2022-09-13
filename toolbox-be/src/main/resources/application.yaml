@@ -3,6 +3,9 @@ spring:
     name: Toolbox
     description: A platform for all sorts of tooling.
     version: v1
+    developer:
+      name: H3AR7B3A7
+      mail: steven.d.hondt.sdh@gmail.com
     domain-address: http://localhost:4200/toolbox-ui
   h2:
     console:
@@ -56,6 +59,7 @@ management:
 springdoc:
   show-actuator: true
   swagger-ui:
+    url: /v3/api-docs.yaml
     oauth:
       client-id: ${GOOGLE_CLIENT_ID}
       client-secret: ${GOOGLE_CLIENT_SECRET}

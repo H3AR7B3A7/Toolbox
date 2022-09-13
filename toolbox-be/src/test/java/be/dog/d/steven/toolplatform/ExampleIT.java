@@ -7,6 +7,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ExampleIT {
 
     @Test
-    void name() {
-    }
+    void name() {}
 }
