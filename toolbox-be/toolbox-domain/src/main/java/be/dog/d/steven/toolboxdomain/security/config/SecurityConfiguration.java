@@ -14,6 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
@@ -44,7 +45,9 @@ public class SecurityConfiguration {
                         .authenticated())
                 .oauth2Login(oauth2Login -> oauth2Login.successHandler(this.authenticationSuccessHandler))
                 .logout(logout -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
-                        .logoutSuccessHandler(this.logoutSuccessHandler));
+                        .logoutSuccessHandler(this.logoutSuccessHandler))
+                .csrf()
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
         return http.build();
     }
 }

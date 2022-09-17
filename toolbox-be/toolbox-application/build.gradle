@@ -2,4 +2,6 @@ dependencies {
 	implementation project(':toolbox-adapter')
 
 	implementation libs.springdoc
+	compileOnly 'org.flywaydb:flyway-core'
+	compileOnly "org.flywaydb:flyway-mysql"
 }

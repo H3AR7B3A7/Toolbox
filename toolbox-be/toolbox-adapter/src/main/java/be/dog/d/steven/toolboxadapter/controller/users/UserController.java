@@ -1,4 +1,4 @@
-package be.dog.d.steven.toolboxadapter.users;
+package be.dog.d.steven.toolboxadapter.controller.users;
 
 import be.dog.d.steven.toolboxdomain.security.service.AuthService;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package be.dog.d.steven.toolboxadapter.metrics;
+package be.dog.d.steven.toolboxadapter.actuator;
 
 import be.dog.d.steven.toolboxdomain.security.service.UserService;
 import lombok.RequiredArgsConstructor;

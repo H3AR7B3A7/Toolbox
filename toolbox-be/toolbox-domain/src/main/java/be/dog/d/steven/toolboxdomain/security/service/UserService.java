@@ -17,10 +17,10 @@ public class UserService {
     private final UserRepository userRepository;
 
     public void registerNewUser(UserRegistrationCommand userRegistrationCommand) {
-        ToolboxUser user = userRepository.findByUserName(userRegistrationCommand.getUsername());
+        ToolboxUser user = userRepository.findByToolboxUserId(userRegistrationCommand.getUserId());
         if (user == null) {
             ToolboxUser savedUser = userRepository.save(userRegistrationCommand.toToolboxUser());
-            log.info("New user registered: " + savedUser.getUserName());
+            log.info("New user registered: " + savedUser.getToolboxUserId());
         }
     }
 

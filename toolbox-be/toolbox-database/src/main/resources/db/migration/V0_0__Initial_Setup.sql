@@ -5,8 +5,8 @@ DROP
 CREATE
     TABLE
         toolbox.toolbox_user(
-            id BIGINT(44) PRIMARY KEY AUTO_INCREMENT,
-            user_name VARCHAR(255),
+            id BIGINT PRIMARY KEY AUTO_INCREMENT,
+            toolbox_user_id VARCHAR(36),
             first_name VARCHAR(255),
             last_name VARCHAR(255),
             email VARCHAR(255)
