@@ -25,6 +25,7 @@ public class TodoBoardMapper {
         todoDto.setTodoId(todo.getTodoId());
         todoDto.setTitle(todo.getTitle());
         todoDto.setBody(todo.getBody());
+        todoDto.setCompleted(todo.isCompleted());
         return todoDto;
     }
 

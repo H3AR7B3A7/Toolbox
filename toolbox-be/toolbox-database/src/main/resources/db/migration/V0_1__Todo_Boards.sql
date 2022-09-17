@@ -23,6 +23,7 @@ CREATE
             todo_id VARCHAR(36),
             title VARCHAR(255),
             body VARCHAR(255),
+            completed BIT,
             todo_board_id BIGINT,
             FOREIGN KEY(todo_board_id) REFERENCES todo_board(id)
         );
