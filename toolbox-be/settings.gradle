@@ -1,4 +1,5 @@
 rootProject.name = 'toolbox-be'
+include (':toolbox-application', ':toolbox-domain', ':toolbox-adapter', ':toolbox-database')
 
 dependencyResolutionManagement {
 	versionCatalogs {

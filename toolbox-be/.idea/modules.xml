@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-be.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-be.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.integrationTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.main.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.test.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-adapter/toolbox-be.toolbox-adapter.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.integrationTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.test.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-application/toolbox-be.toolbox-application.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.integrationTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.main.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.test.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-database/toolbox-be.toolbox-database.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.integrationTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/toolbox-domain/toolbox-be.toolbox-domain.unitTest.iml" />
+    </modules>
+  </component>
+</project>
