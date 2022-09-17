@@ -1,4 +1,4 @@
-package be.dog.d.steven.toolboxdomain.security.repository;
+package be.dog.d.steven.toolboxdatabase.repository;
 
 import be.dog.d.steven.toolboxdatabase.model.ToolboxUser;
 import org.springframework.stereotype.Repository;

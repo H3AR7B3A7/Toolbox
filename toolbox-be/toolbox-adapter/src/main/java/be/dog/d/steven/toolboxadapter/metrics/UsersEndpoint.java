@@ -1,13 +1,10 @@
-package be.dog.d.steven.toolboxadapter.telemetry;
+package be.dog.d.steven.toolboxadapter.metrics;
 
 import be.dog.d.steven.toolboxdomain.security.service.UserService;
 import lombok.RequiredArgsConstructor;
-import net.minidev.json.JSONObject;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 @Service
 @Endpoint(id = "users")
@@ -18,6 +15,6 @@ public class UsersEndpoint {
 
     @ReadOperation
     public String getUserCount() {
-        return new JSONObject(Map.of("users", userService.count())).toJSONString();
+        return userService.userCountMetric();
     }
 }

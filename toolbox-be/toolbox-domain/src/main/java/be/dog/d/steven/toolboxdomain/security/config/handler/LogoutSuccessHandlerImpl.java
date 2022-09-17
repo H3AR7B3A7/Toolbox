@@ -1,4 +1,4 @@
-package be.dog.d.steven.toolboxdomain.security.configuration;
+package be.dog.d.steven.toolboxdomain.security.config.handler;
 
 import java.io.IOException;
 import javax.servlet.ServletContext;

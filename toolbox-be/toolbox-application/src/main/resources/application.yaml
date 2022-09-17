@@ -53,6 +53,11 @@ management:
     health:
       enabled: true
       show-details: always
+      group:
+        db:
+          include: db      # /metrics/health/db  : group including only db
+          show-components: always
+          show-details: always
 
 ---
 

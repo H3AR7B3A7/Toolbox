@@ -1,8 +1,10 @@
 package be.dog.d.steven.toolboxdomain.security.service;
 
 import be.dog.d.steven.toolboxdatabase.model.ToolboxUser;
-import be.dog.d.steven.toolboxdomain.security.model.UserRegistrationRequest;
-import be.dog.d.steven.toolboxdomain.security.repository.UserRepository;
+import be.dog.d.steven.toolboxdatabase.repository.UserRepository;
+import be.dog.d.steven.toolboxdomain.security.command.UserRegistrationCommand;
+import com.nimbusds.jose.shaded.json.JSONObject;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,15 +16,15 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public void registerNewUser(UserRegistrationRequest userRegistrationRequest) {
-        ToolboxUser user = userRepository.findByUserName(userRegistrationRequest.getUsername());
+    public void registerNewUser(UserRegistrationCommand userRegistrationCommand) {
+        ToolboxUser user = userRepository.findByUserName(userRegistrationCommand.getUsername());
         if (user == null) {
-            ToolboxUser savedUser = userRepository.save(userRegistrationRequest.toToolboxUser());
+            ToolboxUser savedUser = userRepository.save(userRegistrationCommand.toToolboxUser());
             log.info("New user registered: " + savedUser.getUserName());
         }
     }
 
-    public long count() {
-        return this.userRepository.count();
+    public String userCountMetric() {
+        return new JSONObject(Map.of("users", userRepository.count())).toJSONString();
     }
 }

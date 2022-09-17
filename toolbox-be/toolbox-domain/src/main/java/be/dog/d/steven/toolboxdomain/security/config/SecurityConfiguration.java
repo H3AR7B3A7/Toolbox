@@ -1,4 +1,4 @@
-package be.dog.d.steven.toolboxdomain.security.configuration;
+package be.dog.d.steven.toolboxdomain.security.config;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +33,7 @@ public class SecurityConfiguration {
                 .authorizeRequests(authorize -> authorize
                         .mvcMatchers(
                                 "/",
-                                "/metrics/*",
+                                "/metrics/**",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",

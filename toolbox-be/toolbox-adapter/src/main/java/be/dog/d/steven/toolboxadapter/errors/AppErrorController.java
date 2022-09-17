@@ -1,4 +1,4 @@
-package be.dog.d.steven.toolboxdomain.security.controller;
+package be.dog.d.steven.toolboxadapter.errors;
 
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;

@@ -1,7 +1,10 @@
-package be.dog.d.steven.toolboxdomain.security.configuration;
+package be.dog.d.steven.toolboxdomain.security.config.handler;
 
-import be.dog.d.steven.toolboxdomain.security.model.UserRegistrationRequest;
+import be.dog.d.steven.toolboxdomain.security.command.UserRegistrationCommand;
 import be.dog.d.steven.toolboxdomain.security.service.UserService;
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,10 +12,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Service;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @Slf4j
 @Service
@@ -30,7 +29,7 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
             throws IOException {
         var oidcUser = (OidcUser) authentication.getPrincipal();
 
-        var registrationRequest = UserRegistrationRequest.builder()
+        var registrationRequest = UserRegistrationCommand.builder()
                 .username(oidcUser.getSubject())
                 .email(oidcUser.getEmail())
                 .firstname(oidcUser.getGivenName())
