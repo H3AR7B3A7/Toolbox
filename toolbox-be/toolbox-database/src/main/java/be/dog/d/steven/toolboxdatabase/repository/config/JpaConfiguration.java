@@ -1,4 +1,4 @@
-package be.dog.d.steven.toolboxdatabase.config;
+package be.dog.d.steven.toolboxdatabase.repository.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

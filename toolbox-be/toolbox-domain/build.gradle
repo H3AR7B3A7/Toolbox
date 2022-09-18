@@ -4,4 +4,5 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	compileOnly 'org.springframework.boot:spring-boot-starter-tomcat'
+	testCompileOnly 'javax.persistence:javax.persistence-api'
 }

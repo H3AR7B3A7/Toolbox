@@ -40,7 +40,7 @@ public class TodoBoard {
 
     @Getter
     @Setter
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "toolboxUserId", referencedColumnName = "id", updatable = false)
     private ToolboxUser toolboxUser;
 
