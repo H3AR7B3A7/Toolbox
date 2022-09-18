@@ -7,9 +7,6 @@ spring:
       name: H3AR7B3A7
       mail: steven.d.hondt.sdh@gmail.com
     domain-address: http://localhost:4200/toolbox-ui
-  h2:
-    console:
-      enabled: true
   datasource:
     url: jdbc:mysql://localhost:3306/toolbox
     username: root
@@ -64,7 +61,9 @@ management:
 springdoc:
   show-actuator: true
   swagger-ui:
-    url: /v3/api-docs.yaml
+    url: /v3/api-docs.yaml   
     oauth:
       client-id: ${GOOGLE_CLIENT_ID}
       client-secret: ${GOOGLE_CLIENT_SECRET}
+    csrf:
+      enabled: true

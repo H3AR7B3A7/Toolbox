@@ -30,7 +30,7 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
         var oidcUser = (OidcUser) authentication.getPrincipal();
 
         var registrationRequest = UserRegistrationCommand.builder()
-                .username(oidcUser.getSubject())
+                .userId(oidcUser.getSubject())
                 .email(oidcUser.getEmail())
                 .firstname(oidcUser.getGivenName())
                 .lastname(oidcUser.getFamilyName())

@@ -1,6 +1,5 @@
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'mysql:mysql-connector-java'
-	compileOnly 'org.flywaydb:flyway-core'
-	compileOnly "org.flywaydb:flyway-mysql"
+	testCompileOnly 'org.springframework.boot:spring-boot-starter-tomcat'
 }

@@ -10,10 +10,10 @@ public class UserRegistrationCommand {
 
     private String firstname;
     private String lastname;
-    private String username;
+    private String userId;
     private String email;
 
     public ToolboxUser toToolboxUser() {
-        return new ToolboxUser(username, firstname, lastname, email);
+        return new ToolboxUser(userId, firstname, lastname, email);
     }
 }

@@ -22,7 +22,7 @@ public class ToolboxUser {
 
     @Column(unique = true)
     @Setter
-    private String userName;
+    private String toolboxUserId;
 
     @Setter
     private String firstName;
@@ -33,8 +33,8 @@ public class ToolboxUser {
     @Setter
     private String email;
 
-    public ToolboxUser(String userName, String firstName, String lastName, String email) {
-        this.userName = userName;
+    public ToolboxUser(String toolboxUserId, String firstName, String lastName, String email) {
+        this.toolboxUserId = toolboxUserId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
