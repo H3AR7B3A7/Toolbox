@@ -61,7 +61,7 @@ management:
 springdoc:
   show-actuator: true
   swagger-ui:
-    url: /v3/api-docs.yaml
+    url: /v3/api-docs.yaml   
     oauth:
       client-id: ${GOOGLE_CLIENT_ID}
       client-secret: ${GOOGLE_CLIENT_SECRET}

@@ -8,6 +8,8 @@ import io.swagger.v3.oas.annotations.security.OAuthFlow;
 import io.swagger.v3.oas.annotations.security.OAuthFlows;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.annotations.servers.Server;
+import org.springdoc.core.GroupedOpenApi;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -31,4 +33,14 @@ import org.springframework.context.annotation.Configuration;
                                 @OAuthFlow(
                                         authorizationUrl =
                                                 "${server.servlet.context-path}/oauth2/authorization/google")))
-public class OpenApiConfig {}
+public class OpenApiConfig {
+    @Bean
+    GroupedOpenApi allApis() {
+        return GroupedOpenApi.builder().group("all").pathsToMatch("/**").build();
+    }
+
+    @Bean
+    GroupedOpenApi v1Apis() {
+        return GroupedOpenApi.builder().group("v1").pathsToMatch("/v1/**").build();
+    }
+}
