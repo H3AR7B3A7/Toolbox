@@ -1,11 +1,13 @@
 package be.dog.d.steven.toolboxdatabase.model;
 
+import be.dog.d.steven.toolboxdatabase.model.exception.TodoNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TodoBoardTest {
 
@@ -47,10 +49,10 @@ class TodoBoardTest {
         }
 
         @Nested
-        @DisplayName("When removing a todo")
+        @DisplayName("When removing a todo, if todos size was 3")
         class WhenDelete {
             @Test
-            @DisplayName("If todos size was 3, it is then 2")
+            @DisplayName("Then todos size is 2")
             void testRemoveTodo() {
                 Todo marked = createTodo("Marked");
                 Todo unmarked = createTodo();
@@ -71,7 +73,7 @@ class TodoBoardTest {
         @DisplayName("When updating a todo")
         class WhenUpdate {
             @Test
-            @DisplayName("Name and body are updated")
+            @DisplayName("Then name and body are updated")
             void testUpdateTodo() {
                 Todo created = createTodo("Created");
                 created.setBody("Created");
@@ -93,7 +95,7 @@ class TodoBoardTest {
         @DisplayName("When patching a todo")
         class WhenPatch {
             @Test
-            @DisplayName("Completed turns true when false and vice versa")
+            @DisplayName("Then completed turns true when false and vice versa")
             void testPatchTodo() {
                 Todo todo = createTodo();
                 todoBoard.addTodo(todo);
@@ -104,6 +106,20 @@ class TodoBoardTest {
 
                 todoBoard.patchCompleted(todo.getTodoId());
                 assertThat(todoBoard.getTodos().get(0).isCompleted()).isEqualTo(false);
+            }
+        }
+
+        @Nested
+        @DisplayName("When a todo does not exist")
+        class WhenNotFound {
+            @Test
+            @DisplayName("Then an exception is thrown")
+            void testPatchTodo() {
+                Todo todo = createTodo();
+
+                assertThrows(TodoNotFoundException.class, () -> todoBoard.updateTodo(todo.getTodoId(), todo));
+                assertThrows(TodoNotFoundException.class, () -> todoBoard.removeTodo(todo.getTodoId()));
+                assertThrows(TodoNotFoundException.class, () -> todoBoard.patchCompleted(todo.getTodoId()));
             }
         }
     }
