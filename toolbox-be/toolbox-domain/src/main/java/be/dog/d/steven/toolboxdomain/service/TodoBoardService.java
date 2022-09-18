@@ -6,10 +6,9 @@ import be.dog.d.steven.toolboxdatabase.model.ToolboxUser;
 import be.dog.d.steven.toolboxdatabase.model.exception.TodoBoardNotFoundException;
 import be.dog.d.steven.toolboxdatabase.repository.TodoBoardRepository;
 import be.dog.d.steven.toolboxdomain.security.service.AuthService;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

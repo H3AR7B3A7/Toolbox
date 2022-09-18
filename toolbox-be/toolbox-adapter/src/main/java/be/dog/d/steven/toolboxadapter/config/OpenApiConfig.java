@@ -36,11 +36,14 @@ import org.springframework.context.annotation.Configuration;
 public class OpenApiConfig {
     @Bean
     GroupedOpenApi allApis() {
-        return GroupedOpenApi.builder().group("all").pathsToMatch("/**").build();
+        return GroupedOpenApi.builder().group("All").pathsToMatch("/**").build();
     }
 
     @Bean
-    GroupedOpenApi v1Apis() {
-        return GroupedOpenApi.builder().group("v1").pathsToMatch("/v1/**").build();
+    GroupedOpenApi latestTodoBoardApis() {
+        return GroupedOpenApi.builder()
+                .group("Todo Boards (latest)")
+                .pathsToMatch("/v1/todoboards/**")
+                .build();
     }
 }

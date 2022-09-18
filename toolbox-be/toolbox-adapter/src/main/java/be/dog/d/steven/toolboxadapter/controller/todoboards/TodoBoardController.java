@@ -10,6 +10,8 @@ import be.dog.d.steven.toolboxdatabase.model.TodoBoard;
 import be.dog.d.steven.toolboxdomain.service.TodoBoardService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import java.util.List;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,9 +24,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/v1/todoboards")
@@ -55,7 +54,8 @@ public class TodoBoardController {
     @PutMapping("/{todoBoardId}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Update a todo board for the authenticated user.")
-    public TodoBoardDto updateTodoBoard(@PathVariable String todoBoardId, @RequestBody CreateTodoBoardCommand createTodoBoardCommand) {
+    public TodoBoardDto updateTodoBoard(
+            @PathVariable String todoBoardId, @RequestBody CreateTodoBoardCommand createTodoBoardCommand) {
         TodoBoard todoBoard = todoBoardMapper.mapTodoBoard(createTodoBoardCommand);
         return todoBoardMapper.mapTodoBoard(todoBoardService.updateTodoBoard(todoBoardId, todoBoard));
     }
@@ -78,7 +78,10 @@ public class TodoBoardController {
     @PutMapping("/{todoBoardId}/todos/{todoId}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Update a todo on a todo board for the authenticated user.")
-    public TodoDto updateTodo(@PathVariable String todoBoardId, @PathVariable String todoId, @Valid @RequestBody CreateTodoCommand createTodoDto) {
+    public TodoDto updateTodo(
+            @PathVariable String todoBoardId,
+            @PathVariable String todoId,
+            @Valid @RequestBody CreateTodoCommand createTodoDto) {
         Todo todo = todoBoardMapper.mapTodo(createTodoDto);
         return todoBoardMapper.mapTodo(todoBoardService.updateTodo(todoBoardId, todoId, todo));
     }
@@ -89,7 +92,7 @@ public class TodoBoardController {
     public void deleteTodo(@PathVariable String todoBoardId, @PathVariable String todoId) {
         todoBoardService.deleteTodo(todoBoardId, todoId);
     }
-    
+
     @PatchMapping("/{todoBoardId}/todos/{todoId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "Patch a todo on a todo board for the authenticated user.")

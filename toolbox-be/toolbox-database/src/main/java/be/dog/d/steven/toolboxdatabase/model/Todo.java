@@ -1,15 +1,14 @@
 package be.dog.d.steven.toolboxdatabase.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.hibernate.annotations.NaturalId;
-
+import java.util.UUID;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.UUID;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.hibernate.annotations.NaturalId;
 
 @Entity
 @Getter
@@ -28,7 +27,7 @@ public class Todo {
 
     @Setter
     private String body;
-    
+
     @Setter
     private boolean completed;
 
