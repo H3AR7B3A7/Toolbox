@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "Auth",
-            "id": "interface-Auth-722a0da2be22b87e8f1395bf598eaf4c2730b989fe98201b41c013d37d067ad0c2533cfd3985945a30a8eb252b95da0ae47d231ad7091a5c0d64b8117a5920d2",
+            "id": "interface-Auth-6fdb3c9073fb7e3e8f4ac6429f6d0e0fe08b12d6a0a2105d6eb2ba6da3d7bc4aafdec2e8495dde1c7bedd2a1269dbb2e9979cf032afd3c1b985f470e0a6268d5",
             "file": "src/app/core/auth.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface Auth {\n  given_name: string;\n  locale: string;\n  picture: string;\n  name: string;\n  exp: string;\n  family_name: string;\n  iat: string;\n  email: string;\n}\n",
+            "sourceCode": "export interface Auth {\r\n  given_name: string;\r\n  locale: string;\r\n  picture: string;\r\n  name: string;\r\n  exp: string;\r\n  family_name: string;\r\n  iat: string;\r\n  email: string;\r\n}\r\n",
             "properties": [
                 {
                     "name": "email",
@@ -160,7 +160,7 @@
     "injectables": [
         {
             "name": "AuthService",
-            "id": "injectable-AuthService-791431df8f595e67dd5cf3766899d7f21720dcc3ebcc7d4c15c403854d5a1f9aa17ac69031d191eee81ab57ac6a127b342b1da019c98c0492027b8f0fc9c8e15",
+            "id": "injectable-AuthService-95c71489efbce46a81441c1688fab9b12949520bf342671f2b27855c36225b56bc71dd20c518fb1b9690a77e7da011ff35fe148af6d2277cfffb6d4ec3a34bcc",
             "file": "src/app/core/auth.service.ts",
             "properties": [
                 {
@@ -203,7 +203,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { environment } from '../../environments/environment';\nimport { HttpClient } from '@angular/common/http';\nimport { Auth } from '@app/core/auth';\nimport { BehaviorSubject, map, Observable } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AuthService {\n  private _auth = new BehaviorSubject<Auth | undefined>(undefined);\n\n  constructor(private http: HttpClient) {}\n\n  get auth(): Observable<Auth | undefined> {\n    return this._auth.asObservable();\n  }\n\n  get isLoggedIn(): Observable<boolean> {\n    return this.auth.pipe(map((auth) => auth !== undefined));\n  }\n\n  checkAuth() {\n    this.http.get<Auth>(environment.apiUrl + 'auth').subscribe((auth) => {\n      this._auth.next(auth);\n    });\n  }\n\n  logout() {\n    this._auth.next(undefined);\n    window.location.href = environment.apiUrl + 'logout';\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { environment } from '../../environments/environment';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Auth } from '@app/core/auth';\r\nimport { BehaviorSubject, map, Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AuthService {\r\n  private _auth = new BehaviorSubject<Auth | undefined>(undefined);\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  get auth(): Observable<Auth | undefined> {\r\n    return this._auth.asObservable();\r\n  }\r\n\r\n  get isLoggedIn(): Observable<boolean> {\r\n    return this.auth.pipe(map((auth) => auth !== undefined));\r\n  }\r\n\r\n  checkAuth() {\r\n    this.http.get<Auth>(environment.apiUrl + 'auth').subscribe((auth) => {\r\n      this._auth.next(auth);\r\n    });\r\n  }\r\n\r\n  logout() {\r\n    this._auth.next(undefined);\r\n    window.location.href = environment.apiUrl + 'logout';\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -585,7 +585,7 @@
         },
         {
             "name": "NavBarComponent",
-            "id": "component-NavBarComponent-ebad7e7d5682a016c5cbf64e479e04a9b0c18fd935d6ab0c6cf319883c689ad17d314c7dfd2634737f4d10c2b8198e036dabc84d8caacc217ac3799bfb9a3a31",
+            "id": "component-NavBarComponent-4ec9f1207a03d32135416e32646b5a960158bd793f5e4c49c43702d4b08a68c644b5072f13dc9c47b28cd228ed670201a03ccf64bd3f5cedd18ba51244346dcb",
             "file": "src/app/core/nav-bar/nav-bar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -611,7 +611,7 @@
                     "type": "Observable<boolean>",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 14
                 },
                 {
                     "name": "picture",
@@ -620,7 +620,7 @@
                     "type": "Observable<string | undefined>",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 15
                 }
             ],
             "methodsClass": [
@@ -630,9 +630,11 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 33,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCalled by the logout button\n",
+                    "description": "<p>Called by the logout button</p>\n"
                 },
                 {
                     "name": "ngOnInit",
@@ -640,19 +642,21 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 22,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nChecks for authentication and fetches the user profile picture\n",
+                    "description": "<p>Checks for authentication and fetches the user profile picture</p>\n"
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
+            "description": "<p>The navigation bar at the top of the page</p>\n",
+            "rawdescription": "\n\nThe navigation bar at the top of the page\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { AuthService } from '@app/core/auth.service';\r\nimport { map, Observable, startWith } from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'nav-bar',\r\n  templateUrl: './nav-bar.component.html',\r\n  styleUrls: ['./nav-bar.component.scss']\r\n})\r\nexport class NavBarComponent implements OnInit {\r\n  loggedIn!: Observable<boolean>;\r\n  picture!: Observable<string | undefined>;\r\n\r\n  constructor(private authService: AuthService) {}\r\n\r\n  ngOnInit(): void {\r\n    this.loggedIn = this.authService.isLoggedIn;\r\n    this.picture = this.authService.auth.pipe(\r\n      startWith(undefined),\r\n      map((auth) => auth?.picture)\r\n    );\r\n  }\r\n\r\n  logout() {\r\n    this.authService.logout();\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { AuthService } from '@app/core/auth.service';\r\nimport { map, Observable, startWith } from 'rxjs';\r\n\r\n/**\r\n * The navigation bar at the top of the page\r\n */\r\n@Component({\r\n  selector: 'nav-bar',\r\n  templateUrl: './nav-bar.component.html',\r\n  styleUrls: ['./nav-bar.component.scss']\r\n})\r\nexport class NavBarComponent implements OnInit {\r\n  loggedIn!: Observable<boolean>;\r\n  picture!: Observable<string | undefined>;\r\n\r\n  constructor(private authService: AuthService) {}\r\n\r\n  /**\r\n   * Checks for authentication and fetches the user profile picture\r\n   */\r\n  ngOnInit(): void {\r\n    this.loggedIn = this.authService.isLoggedIn;\r\n    this.picture = this.authService.auth.pipe(\r\n      startWith(undefined),\r\n      map((auth) => auth?.picture)\r\n    );\r\n  }\r\n\r\n  /**\r\n   * Called by the logout button\r\n   */\r\n  logout() {\r\n    this.authService.logout();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -674,7 +678,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 12,
+                "line": 15,
                 "jsdoctags": [
                     {
                         "name": "authService",
@@ -1062,7 +1066,7 @@
         ]
     },
     "coverage": {
-        "count": 0,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -1115,9 +1119,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "NavBarComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
+                "coveragePercent": 50,
+                "coverageCount": "3/6",
+                "status": "medium"
             },
             {
                 "filePath": "src/app/core/nav-bar/nav-bar.stories.ts",

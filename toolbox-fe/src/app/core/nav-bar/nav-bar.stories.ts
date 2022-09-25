@@ -1,4 +1,5 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+
 import { MatButtonModule } from '@angular/material/button';
 
 import { NavBarComponent } from './nav-bar.component';
@@ -27,10 +28,27 @@ Default.args = {
   loggedIn: of(false)
 };
 
+Default.parameters = {
+  docs: {
+    description: {
+      story: 'The logo, title and a login button are visible.'
+    }
+  }
+};
+
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
   loggedIn: of(true),
   picture: of(
     'https://raw.githubusercontent.com/H3AR7B3A7/Toolbox/master/toolbox-fe/.storybook/public/profile-picture.png'
   )
+};
+
+LoggedIn.parameters = {
+  docs: {
+    description: {
+      story:
+        'After logging in a logout button and a users profile picture are visible.'
+    }
+  }
 };

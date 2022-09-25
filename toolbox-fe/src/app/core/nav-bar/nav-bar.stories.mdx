@@ -1,0 +1,49 @@
+import {Canvas, Meta, Story, ArgsTable} from '@storybook/addon-docs/blocks';
+
+import {NavBarComponent} from './nav-bar.component'; import {moduleMetadata} from "@storybook/angular"; import {
+  MatButtonModule
+} from "@angular/material/button"; import {HttpClientModule} from "@angular/common/http"; import {of} from "rxjs";
+
+export const Template = (args) => <NavBarComponent {...args} />;
+
+<Meta
+  title="Home Page (MDX)/NavBar"
+  component={NavBarComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [MatButtonModule, HttpClientModule]
+    })
+  ]}
+/>
+
+# NavBar
+
+We can also create custom documentation with `MDX` from scratch.
+This is just an example of how to approximate the auto generated documentation for the `NavBar`.
+
+<Canvas>
+  <Story
+    name="Default"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={NavBarComponent}/>
+
+## Stories
+### LoggedIn
+
+<Canvas>
+  <Story
+    name="LoggedIn"
+    args={{
+      loggedIn: of(true),
+      picture: of(
+        'https://raw.githubusercontent.com/H3AR7B3A7/Toolbox/master/toolbox-fe/.storybook/public/profile-picture.png'
+      )
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

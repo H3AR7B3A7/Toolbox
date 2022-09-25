@@ -22,7 +22,8 @@
     "esModuleInterop": true,
     "paths": {
       "@app/*" : ["src/app/*"]
-    }
+    },
+    "jsx": "react"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
