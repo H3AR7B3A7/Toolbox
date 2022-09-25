@@ -5,19 +5,20 @@ import { HealthMetrics } from './health-metrics';
 import { UserMetrics } from './user-metrics';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class TelemetryService {
-  private static readonly HEALTH_ENDPOINT = environment.telemetryUrl + 'health';
-  private static readonly USERS_ENDPOINT = environment.telemetryUrl + 'users';
+    private static readonly HEALTH_ENDPOINT =
+        environment.telemetryUrl + 'health';
+    private static readonly USERS_ENDPOINT = environment.telemetryUrl + 'users';
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  public getHealthMetrics() {
-    return this.http.get<HealthMetrics>(TelemetryService.HEALTH_ENDPOINT);
-  }
+    public getHealthMetrics() {
+        return this.http.get<HealthMetrics>(TelemetryService.HEALTH_ENDPOINT);
+    }
 
-  public getUserMetrics() {
-    return this.http.get<UserMetrics>(TelemetryService.USERS_ENDPOINT);
-  }
+    public getUserMetrics() {
+        return this.http.get<UserMetrics>(TelemetryService.USERS_ENDPOINT);
+    }
 }
